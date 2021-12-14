@@ -38,7 +38,7 @@ class _SendMoneyPageState extends State<SendMoneyPage> {
               height: 6,
             ),
             Stack(
-              clipBehavior: Clip.none,
+              overflow: Overflow.visible,
               children: [
                 Card(
                   elevation: 3,

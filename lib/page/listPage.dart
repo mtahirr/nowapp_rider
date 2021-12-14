@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:now_app/page/orderHistory.dart';
 
 class ListPage extends StatefulWidget {
   @override
@@ -51,11 +52,16 @@ class _ListPageState extends State<ListPage> {
                       ),
                     ],
                   ),
-                  Text(
-                    'الرجاء التحديث',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
+                  InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=>OrderHistory()));
+                    },
+                    child: Text(
+                      'الرجاء التحديث',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   Transform.scale(
