@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:now_app/page/listPage.dart';
 
 class InvoiceImagePage extends StatefulWidget {
   @override
@@ -179,6 +181,34 @@ class _InvoiceImagePageState extends State<InvoiceImagePage> {
                   ),
                 ],
               ),
+              Spacer(),
+              InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (ctx)=>ListPage()));
+                      },
+                      child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 100),
+                          padding: EdgeInsets.only(bottom: 15, top: 5),
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/Rectangle 18.png'),
+                                  fit: BoxFit.fill)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                             
+                            
+                              Text(
+                                'تم',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          )),
+                    ),
           ],
         ),
       ),
