@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:now_app/page/typesBurger.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,6 +26,12 @@ class _HomePageState extends State<HomePage> {
         child: Column(children: [
           SizedBox(
             height: 30,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+            ),
+            child: Image.asset('assets/mac.png'),
           ),
           Card(
             margin: EdgeInsets.symmetric(horizontal: 100),
@@ -73,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                           Text(
                             "الرياض . شارع الملك عبدالعزيز",
                             style: TextStyle(
-                              color: Colors.grey,
+                              
                               fontSize: 12,
                             ),
                           ),
@@ -137,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               "تقييم المستخدمين",
                               style: TextStyle(
-                                color: Colors.grey,
+                                
                                 fontSize: 15,
                               ),
                             ),
@@ -293,6 +301,54 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+           Expanded(
+             child: StaggeredGridView.countBuilder(
+
+             crossAxisCount: 4,
+             itemCount: 8,
+             itemBuilder: (BuildContext context, int index) =>  InkWell(
+                onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (ctx) => TypesOfburger()));
+              },
+               child: Card(
+                 elevation: 3,
+                 shape: RoundedRectangleBorder(
+                   borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(30),
+                      topLeft:Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    )),
+                 child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    border: Border.all( color: Color(0xff990000),),
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(30),
+                      topLeft:Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    )
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('الفطور',style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xff990000),
+                      ),),
+                      Image.asset('assets/burger.png'),
+                    ],
+                  ),
+                         ),
+               ),
+             ),
+             staggeredTileBuilder: (int index) =>
+                 new StaggeredTile.count(2, index.isEven ? 1 : 1),
+             mainAxisSpacing: 8.0,
+             crossAxisSpacing: 2.0,
+           ),
+           )
+         
         ]),
       ),
     );
