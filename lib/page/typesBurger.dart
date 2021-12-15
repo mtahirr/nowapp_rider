@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:now_app/page/wishlist.dart';
 
 class TypesOfburger extends StatefulWidget {
   @override
@@ -139,89 +140,95 @@ class _TypesOfburgerState extends State<TypesOfburger> {
               ),
               ],
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment:MainAxisAlignment.end,
-                children:[
-                  Card(
-                 elevation: 3,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(30),
-                      topLeft:Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    )),
-                 child: Container(
-                 
-                  padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-                  decoration: BoxDecoration(
-                    border: Border.all( color: Color(0xff990000),),
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(30),
-                      topLeft:Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    )
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                       mainAxisAlignment:MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text('الفطور',style: TextStyle(
-                                  fontSize: 16,
-                                  
-                                ),),
-                                Text(' خبز عادي +  سلطة الخردل  ',
-                                textAlign: TextAlign.end,
-                                   overflow: TextOverflow.ellipsis,
-                                  
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Color(0xff777576),
-                                ),),
-                                            
-                              ],
-                            ),
-                          ),
-                          Container(child: Image.asset('assets/burger.png')),
-                        ],
-                      ),
-                         Row(
-                           mainAxisAlignment: MainAxisAlignment.start,
-                           children: [
-                             Text('70',style: TextStyle(
-                                      fontSize: 12,
-                                      color: Color(0xff777576),
-                                    ),),
-                             Text('ريال',
-                              textAlign: TextAlign.justify,
-                             style: TextStyle(
-                                      fontSize: 12,
-                                      color: Color(0xff777576),
-                                    ),),
-                           ],
-                         ),
-                    ],
-                  ),
-                         ),
-               ),
-                    Transform.scale(
-                    scale: 1.2,
-                    child: Switch(
-                      onChanged: toggleSwitch,
-                      value: switchControl,
-                      activeColor: Colors.white,
-                      activeTrackColor: Color(0xff990000),
-                      inactiveThumbColor: Colors.white,
-                      inactiveTrackColor: Colors.grey,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (ctx) => WishListPage()));
+              },
+              child: Container(
+                child: Row(
+                  mainAxisAlignment:MainAxisAlignment.end,
+                  children:[
+                    Card(
+                   elevation: 3,
+                   shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(30),
+                        topLeft:Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      )),
+                   child: Container(
+                   
+                    padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                    decoration: BoxDecoration(
+                      border: Border.all( color: Color(0xff990000),),
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(30),
+                        topLeft:Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      )
                     ),
-                  ),
-                ]
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                         mainAxisAlignment:MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Text('الفطور',style: TextStyle(
+                                    fontSize: 16,
+                                    
+                                  ),),
+                                  Text(' خبز عادي +  سلطة الخردل  ',
+                                  textAlign: TextAlign.end,
+                                     overflow: TextOverflow.ellipsis,
+                                    
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Color(0xff777576),
+                                  ),),
+                                              
+                                ],
+                              ),
+                            ),
+                            Container(child: Image.asset('assets/burger.png')),
+                          ],
+                        ),
+                           Row(
+                             mainAxisAlignment: MainAxisAlignment.start,
+                             children: [
+                               Text('70',style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xff777576),
+                                      ),),
+                               Text('ريال',
+                                textAlign: TextAlign.justify,
+                               style: TextStyle(
+                                        fontSize: 12,
+                                        color: Color(0xff777576),
+                                      ),),
+                             ],
+                           ),
+                      ],
+                    ),
+                           ),
+                 ),
+                      Transform.scale(
+                      scale: 1.2,
+                      child: Switch(
+                        onChanged: toggleSwitch,
+                        value: switchControl,
+                        activeColor: Colors.white,
+                        activeTrackColor: Color(0xff990000),
+                        inactiveThumbColor: Colors.white,
+                        inactiveTrackColor: Colors.grey,
+                      ),
+                    ),
+                  ]
+                ),
               ),
             )
           ],
