@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:now_app/page/addExtradeal.dart';
+import 'package:now_app/page/delegateInfo.dart';
 
-class OrderDealPage extends StatefulWidget {
+class AddExtraDealPage extends StatefulWidget {
   @override
-  _OrderDealPageState createState() => _OrderDealPageState();
+  _AddExtraDealPageState createState() => _AddExtraDealPageState();
 }
 
-class _OrderDealPageState extends State<OrderDealPage> {
+class _AddExtraDealPageState extends State<AddExtraDealPage> {
   bool _value = false;
   @override
   Widget build(BuildContext context) {
@@ -35,8 +35,8 @@ class _OrderDealPageState extends State<OrderDealPage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30)),
               child: Container(
-                color:Color(0xffF2F3F4),
                   padding: EdgeInsets.symmetric(horizontal: 30),
+                  color:Color(0xffF2F3F4),
                   child: Column(children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -188,49 +188,30 @@ class _OrderDealPageState extends State<OrderDealPage> {
                       ),
                     ],
                   ),
-                 Row(
-                   children:[
-                       InkWell(
-                          onTap: () {
+                 InkWell(
+                    onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (ctx) => AddExtraDealPage()));
+                    context, MaterialPageRoute(builder: (ctx) => DelegateInfo()));
               },
-                         child: Container(
-                                         padding:
-                                             EdgeInsets.only(right: 45, left: 45, bottom: 15, top: 10),
-                                         decoration: BoxDecoration(
-                                             image: DecorationImage(
-                            image: AssetImage('assets/Rectangle 18.png'),
-                            fit: BoxFit.fill)),
-                                         child: Column(
-                                           mainAxisAlignment: MainAxisAlignment.center,
-                                           children: [
-                                             Text(
-                          'اضافة',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                                             ),
-                                           ],
-                                         )),
-                       ),
-                    Container(
-                  padding:
-                      EdgeInsets.only(right: 30, left: 30, bottom: 15, top: 7),
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/Rectangle 18.png'),
-                          fit: BoxFit.fill)),
-                  child: Center(
-                    child: Text(
-                      'تعديل الوجبة',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                   child: Container(
+                    padding:
+                        EdgeInsets.only(right: 45, left: 45, bottom: 15, top: 10),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image: AssetImage('assets/Rectangle 18.png'),
+                      fit: BoxFit.fill)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                    'اكمل الطلب',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
-                  ))
-                   ]
+                        ),
+                      ],
+                    )),
                  )
                 ],
               ),
