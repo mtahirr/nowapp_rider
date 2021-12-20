@@ -34,7 +34,7 @@ class _PayMethodPageState extends State<PayMethodPage> {
                       Image.asset('assets/cart.png'),
                        Row(children: [
                           Text(
-                            'ريال',
+                            "ريال",
                             textAlign: TextAlign.right,
                             style: TextStyle(
                                 fontSize: 13,color: Color(0xff990000),),
