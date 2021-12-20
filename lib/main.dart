@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:now_app/page/arzoalmadib.dart';
+import 'package:now_app/page/bottomAppbar.dart';
 import 'package:now_app/page/orders.dart';
 import 'package:now_app/page/skip_screen.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: BottomAppBar(),
+      home: BottomApp(),
     );
   }
 }
