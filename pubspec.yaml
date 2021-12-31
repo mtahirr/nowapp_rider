@@ -37,6 +37,8 @@ dependencies:
   carousel_pro: ^1.0.0
   flutter_rating_bar: any
   flutter_staggered_grid_view: any
+  focused_menu: any
+  
 
 dev_dependencies:
   flutter_test:
